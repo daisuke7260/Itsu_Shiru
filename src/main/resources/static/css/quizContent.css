@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Kosugi');
+
+.field{
+	font-family: 'Kosugi', sans-serif;
+}
+.content{
+	background-size: cover;
+	background-image:url('../jpg/paper2.jpg');
+	margin:10% 10% 10% 10%;
+	font-size: 200%;
+    box-shadow: 0 0 10px gray;
+}
+
+.main{
+	position: relative;
+	top:1em;
+	padding:1% 5%;
+}
+.header{
+	font-size: 80px;
+	color: rgb(0, 0, 0);
+	margin:0;
+	padding: 0;
+	text-align: center;
+}
+.quiz-list{
+	list-style-type:none;
+	
+}
+.quizC{
+	padding-left: 1em;
+}
+
+.question{
+	font-size: 140%;
+	color: brown;
+	padding: 8px 0px;
+}
+input[type="image"]{
+	transform: scale(2.5);
+	position:relative;
+	margin-left: 80%;
+	bottom:200px;
+	height:250px;
+	width:auto;
+}
+.page{
+	position: relative;
+	left: 25%; 
+	bottom: 150px;
+	font-size: 90px;
+}
+
+.answer-button{
+	display: none;
+}
+
+input[type="radio"]:checked+label img{
+	
+	border: solid 2px rgb(0, 0, 0);
+}
+
+
+.truelabel{
+  	color: #799dec;
+  	text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca, 0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+}
+
+
+
+label img {
+	box-sizing:border-box;
+	width: 4%;
+	height: 4%;
+	margin: 1qx;
+  	padding: 3px;
+}
+.quizN{
+	padding: 1px 0px;
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.obi img{
+	width:180px;
+	height: auto;
+}
+.obi{
+	background-color: rgb(0, 0, 0);
+	width:100%;
+	position:fixed;
+	border:solid 1px black;
+	top:0;
+	box-shadow: 0 0 15px gray;
+	padding:0px;
+	margin:0;
+	z-index: 100;
+}
+body {
+	background-image:url('../jpg/back.jpg');
+	margin:0px;
+
+}

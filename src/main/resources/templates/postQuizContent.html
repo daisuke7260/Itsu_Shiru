@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<script th:src="@{webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<link rel="stylesheet" th:href="@{/css/postQuizContent.css}">
+		<link rel="stylesheet" th:href="@{/css/common.css}">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		
+		<div th:replace="common :: header"></div>
+   		<div class="content">
+			<div class="header">				
+				<div class="field">社会</div>
+	 		</div>
+	 		
+	 		<!--点数表示-->
+	 		<div class="score">
+				<img th:if="${score == 0}" th:src="@{jpg/0.png}">
+				<img th:if="${score == 10}" th:src="@{jpg/10.png}">
+				<img th:if="${score == 20}" th:src="@{jpg/20.png}">
+				<img th:if="${score == 30}" th:src="@{jpg/30.png}">
+				<img th:if="${score == 40}" th:src="@{jpg/40.png}">
+				<img th:if="${score == 50}" th:src="@{jpg/50.png}">
+				<img th:if="${score == 60}" th:src="@{jpg/60.png}">
+				<img th:if="${score == 70}" th:src="@{jpg/70.png}">	 			 
+				<img th:if="${score == 80}" th:src="@{jpg/80.png}">	 			 
+				<img th:if="${score == 90}" th:src="@{jpg/90.png}">	 			 
+				<img th:if="${score == 100}" th:src="@{/jpg/100.png}">
+			</div>
+
+	 		<hr width="80%">
+			<div th:class="answer">
+				<img th:src="@{jpg/7.png}" onmouseover="this.src='jpg/7.png'" onmouseout="this.src='jpg/6.png'">
+				<div th:each="quiz,iterStat:${quiz}">
+					<a class="btn btn-radius-solid" th:classappend="Q+${iterStat.count}" th:text="Q+${iterStat.count}"><i class="fas fa-angle-right fa-position-right"></i></a>
+					<div class="true" th:if="${quiz.answer == userAnswers[iterStat.count-1]}">正解</div>
+					<div class="false"th:if="${quiz.answer != userAnswers[iterStat.count-1]}">不正解</div>
+					<div th:class="B+${iterStat.count}" th:classappend="C">
+						<div th:text="'問題文:'"></div>
+						<div th:text="${quiz.content}" th:class="awaseru"></div>
+						<div th:text="'解答:'"></div>
+						<div th:text="${quiz.answer}" th:class="awaseru"></div>
+						<div th:text="'解説:'"></div>
+						<div th:text="${quiz.explanation}" th:class="awaseru"></div>
+					</div>
+				</div>
+				
+			</div>
+   		</div>
+
+    	<script text="text/javascript" th:src="@{/js/postQuizContent.js}"></script>
+	</body>
+</html>
